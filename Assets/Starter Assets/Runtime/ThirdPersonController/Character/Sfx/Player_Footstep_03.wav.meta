@@ -22,8 +22,8 @@ AudioImporter:
   assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
-  productId: 267961
-  packageName: 'Starter Assets: Character Controllers | URP'
-  packageVersion: 2.0.2
+  productId: 336166
+  packageName: Genies Avatar SDK
+  packageVersion: 2.8.6
   assetPath: Assets/Starter Assets/Runtime/ThirdPersonController/Character/Sfx/Player_Footstep_03.wav
-  uploadId: 721456
+  uploadId: 889162
