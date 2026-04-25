@@ -1,31 +1,39 @@
-// NPCInteraction.cs — attach to your FPS camera or player
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // use this if you're using TextMeshPro
+using TMPro;
 
 public class NPCInteraction : MonoBehaviour
 {
-    public float interactRange = 3f;       // how close the player must be
-    public GameObject dialogueUI;          // drag your UI Panel here
-    public TMP_Text dialogueText;          // drag your Text element here
+    public float interactRange = 10f;
+    public GameObject dialogueUI;
+    public TMP_Text dialogueText;
 
     private Camera cam;
 
     void Start()
     {
         cam = Camera.main;
+        dialogueUI.SetActive(false);
     }
 
     void Update()
     {
         RaycastHit hit;
+        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
 
-        // shoot ray from centre of camera forward
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, interactRange))
+        Debug.DrawRay(cam.transform.position, cam.transform.forward * interactRange, Color.red);
+
+        if (Physics.Raycast(ray, out hit, interactRange))
         {
+            Debug.Log("Hitting: " + hit.collider.gameObject.name + " | Tag: " + hit.collider.tag);
+
             if (hit.collider.CompareTag("NPC"))
             {
                 NPCDialogue npc = hit.collider.GetComponent<NPCDialogue>();
+
+                if (npc == null)
+                    npc = hit.collider.GetComponentInParent<NPCDialogue>();
+
                 if (npc != null)
                 {
                     dialogueUI.SetActive(true);
@@ -35,7 +43,6 @@ public class NPCInteraction : MonoBehaviour
             }
         }
 
-        // nothing valid hit — hide UI
         dialogueUI.SetActive(false);
     }
 }
