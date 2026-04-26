@@ -1,8 +1,7 @@
-// NPCDialogue.cs — attach to each character
 using UnityEngine;
 
 public class NPCDialogue : MonoBehaviour
 {
-    [TextArea]
-    public string dialogueText = "Hello! How can I help you?";
+    [TextArea(3, 6)]
+    public string dialogueText = "Hello! I saw something suspicious that night...";
 }
