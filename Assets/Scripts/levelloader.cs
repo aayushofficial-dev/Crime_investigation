@@ -1,16 +1,10 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class levelloader : MonoBehaviour
+public class SceneChanger : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void GoToNextScene()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SceneManager.LoadScene("material07");
     }
 }
