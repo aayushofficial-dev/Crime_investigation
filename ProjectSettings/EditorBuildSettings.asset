@@ -9,8 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/STORY.unity
     guid: 9ce004c25fc1fa54ab292b5c1f535222
   - enabled: 1
+    path: Assets/Scenes/cityandcar.unity
+    guid: 240aa11c80c0d484e8a021e00c0287b0
+  - enabled: 1
     path: Assets/Scenes/material07.unity
     guid: 56718be9bd9ed0d4e8379db4d1a53d88
+  - enabled: 1
+    path: Assets/Scenes/options.unity
+    guid: 8152ba71ef19af8488df1fafc6b1c916
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

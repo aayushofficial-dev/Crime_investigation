@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneChanger : MonoBehaviour
+public class LevelLoader : MonoBehaviour  // ← change SceneChanger to LevelLoader
 {
     public void GoToNextScene()
     {
-        SceneManager.LoadScene("material07");
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentIndex + 1);
     }
 }
