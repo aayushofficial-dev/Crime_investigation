@@ -7,6 +7,7 @@ TagManager:
   - CinemachineTarget
   - Car
   - NPC
+  - PlayerCar
   layers:
   - Default
   - TransparentFX
