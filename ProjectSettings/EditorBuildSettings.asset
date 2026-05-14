@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/options.unity
     guid: 8152ba71ef19af8488df1fafc6b1c916
+  - enabled: 1
+    path: Assets/Scenes/wronganswer.unity
+    guid: 540c1ee5cb38b934daa8e77e228e6302
+  - enabled: 1
+    path: Assets/Scenes/correctanswer.unity
+    guid: 44f802e6b563a7840949c8964664fe39
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
