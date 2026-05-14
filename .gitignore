@@ -97,3 +97,10 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+Assets/Starter Assets/Runtime/ThirdPersonController/Prefabs/NestedParentCapsule_Unpack.prefab
+Assets/Starter Assets/Runtime/ThirdPersonController/Prefabs/NestedParentCapsule_Unpack.prefab
+Assets/Starter Assets/Runtime/ThirdPersonController/Prefabs/NestedParentArmature_Unpack.prefab
+Assets/Starter Assets/Runtime/Mobile/Prefabs/VirtualInputs/UI_Virtual_TouchZone.prefab
+Assets/Starter Assets/Runtime/Mobile/Prefabs/VirtualInputs/UI_Virtual_Joystick.prefab
+Assets/Starter Assets/Runtime/Mobile/Prefabs/VirtualInputs/UI_Virtual_Button.prefab
+Assets/Starter Assets/Runtime/Mobile/Prefabs/CanvasInputs/UI_Canvas_StarterAssetsInputs_TouchZones.prefab
