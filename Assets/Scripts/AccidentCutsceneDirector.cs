@@ -25,9 +25,9 @@ public class AccidentCutsceneDirector : MonoBehaviour
     private string message = "City View";
 
     private readonly Vector3 carStart = new Vector3(146.2f, 4.2f, -168f);
-    private readonly Vector3 carEnd = new Vector3(148.2f, 4.2f, -140.8f);
+    private readonly Vector3 carEnd = new Vector3(146.2f, 4.2f, -148.6f);
     private readonly Vector3 victimStart = new Vector3(141.8f, 4.22f, -143.2f);
-    private readonly Vector3 victimHit = new Vector3(146.7f, 4.22f, -142.1f);
+    private readonly Vector3 victimHit = new Vector3(147.4f, 4.22f, -140.2f);
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     private static void AutoStart()
@@ -125,35 +125,46 @@ public class AccidentCutsceneDirector : MonoBehaviour
 
     private void PlayCityView()
     {
-        SetCamera(new Vector3(105f, 65f, -210f), new Vector3(146f, 4f, -145f), 55f);
-        message = "Wide city view before the accident";
+        Vector3 widePosition = new Vector3(100f, 70f, -220f);
+        Vector3 closePosition = new Vector3(132f, 18f, -162f);
+        Vector3 wideLookAt = new Vector3(135f, 4f, -165f);
+        Vector3 closeLookAt = new Vector3(146f, 4.5f, -144f);
 
-        if (timer > 3f)
+        float progress = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(timer / 6f));
+        SetCamera(
+            Vector3.Lerp(widePosition, closePosition, progress),
+            Vector3.Lerp(wideLookAt, closeLookAt, progress),
+            Mathf.Lerp(58f, 40f, progress)
+        );
+
+        message = "Wide city view slowly focusing on the accident area";
+
+        if (timer > 6f)
             NextStep(CutsceneStep.AccidentView);
     }
 
     private void PlayAccidentView()
     {
-        SetCamera(new Vector3(135f, 12f, -155f), new Vector3(147f, 4.5f, -145f), 42f);
+        SetCamera(new Vector3(134f, 12f, -156f), new Vector3(146.5f, 4.5f, -144f), 42f);
         message = "Accident scene view";
 
-        float progress = Mathf.Clamp01(timer / 4f);
+        float progress = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(timer / 3.2f));
         car.transform.position = Vector3.Lerp(carStart, carEnd, progress);
         victim.transform.position = Vector3.Lerp(victimStart, victimHit, progress);
 
-        if (!skidSoundPlayed && timer > 2.4f)
+        if (!skidSoundPlayed && timer > 1.8f)
         {
             skidSoundPlayed = true;
             PlayGeneratedSound(540f, 0.5f);
         }
 
-        if (!tireMarksCreated && timer > 2.7f)
+        if (!tireMarksCreated && timer > 2f)
         {
             tireMarksCreated = true;
             CreateTireMarks();
         }
 
-        if (timer > 4f)
+        if (timer > 3.2f)
         {
             victim.transform.position = victimHit;
             victim.transform.rotation = Quaternion.Euler(90f, 0f, 90f);
@@ -171,13 +182,13 @@ public class AccidentCutsceneDirector : MonoBehaviour
 
         message = "Crash";
 
-        if (timer > 2f)
+        if (timer > 3.5f)
             NextStep(CutsceneStep.InvestigationReady);
     }
 
     private void ShowInvestigationReady()
     {
-        SetCamera(new Vector3(137.8f, 10.5f, -137.8f), new Vector3(147.4f, 4.8f, -143.4f), 48f);
+        SetCamera(new Vector3(137.8f, 10.5f, -137.8f), new Vector3(146.5f, 4.8f, -143.4f), 48f);
         message = "Investigation Started";
     }
 
@@ -196,8 +207,8 @@ public class AccidentCutsceneDirector : MonoBehaviour
 
     private void CreateTireMarks()
     {
-        CreateMark(new Vector3(145.6f, 4.25f, -151f));
-        CreateMark(new Vector3(146.8f, 4.25f, -151f));
+        CreateMark(new Vector3(145.6f, 4.25f, -153f));
+        CreateMark(new Vector3(146.8f, 4.25f, -153f));
     }
 
     private void CreateMark(Vector3 position)
@@ -249,6 +260,8 @@ public class AccidentCutsceneDirector : MonoBehaviour
 
     private void OnGUI()
     {
+        GUI.depth = -1000;
+
         if (step == CutsceneStep.CrashScreen)
         {
             DrawCrashScreen();
@@ -260,15 +273,16 @@ public class AccidentCutsceneDirector : MonoBehaviour
 
     private void DrawCrashScreen()
     {
-        GUI.color = Color.black;
+        GUI.color = new Color(0f, 0f, 0f, 1f);
         GUI.DrawTexture(new Rect(0f, 0f, Screen.width, Screen.height), Texture2D.whiteTexture);
 
         GUI.color = Color.white;
-        DrawCrack(Screen.width * 0.5f, Screen.height * 0.5f, 180f, 3f);
-        DrawCrack(Screen.width * 0.52f, Screen.height * 0.5f, 120f, -35f);
-        DrawCrack(Screen.width * 0.48f, Screen.height * 0.48f, 130f, 42f);
+        DrawCrack(Screen.width * 0.5f, Screen.height * 0.5f, 260f, 3f);
+        DrawCrack(Screen.width * 0.52f, Screen.height * 0.5f, 190f, -35f);
+        DrawCrack(Screen.width * 0.48f, Screen.height * 0.48f, 200f, 42f);
+        DrawCrack(Screen.width * 0.5f, Screen.height * 0.52f, 150f, 80f);
 
-        GUI.Label(new Rect(Screen.width / 2f - 80f, Screen.height / 2f + 80f, 200f, 30f), "CRASH");
+        GUI.Label(new Rect(Screen.width / 2f - 80f, Screen.height / 2f + 105f, 200f, 30f), "CRASH");
         GUI.color = Color.white;
     }
 
@@ -276,7 +290,7 @@ public class AccidentCutsceneDirector : MonoBehaviour
     {
         Matrix4x4 oldMatrix = GUI.matrix;
         GUIUtility.RotateAroundPivot(angle, new Vector2(x, y));
-        GUI.DrawTexture(new Rect(x, y, length, 3f), Texture2D.whiteTexture);
+        GUI.DrawTexture(new Rect(x, y, length, 5f), Texture2D.whiteTexture);
         GUI.matrix = oldMatrix;
     }
 }
