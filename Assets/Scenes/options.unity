@@ -850,7 +850,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4547837981779566280, guid: ea9f64cdf1bb53a488c2e38a062199ff, type: 3}
       propertyPath: m_text
-      value: '                                  Find the real culprit?'
+      value: "                                  Find the real culprit?\n                                  
+        Hint: The first scene"
       objectReference: {fileID: 0}
     - target: {fileID: 5104261702797455296, guid: ea9f64cdf1bb53a488c2e38a062199ff, type: 3}
       propertyPath: m_Name

@@ -266,10 +266,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4547837981779566280, guid: ea9f64cdf1bb53a488c2e38a062199ff, type: 3}
       propertyPath: m_text
-      value: "\n  Oops better luck next time...\n      Amanda was the real killer.
-        \n     How can you have  a flight to          \n     next city if there's
-        no  domestic flights due to cyber attack.\n      Attention to details buddy...
-        attention!!"
+      value: "\n\n      Oops, better luck next time. Amanda was the real killer.             
+        How could anyone catch a flight to another city if all                   
+        domestic flights were grounded due to a cyber                             
+        attack?   \n      Attention to detail matters\u2026 really matters Right?\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 5104261702797455296, guid: ea9f64cdf1bb53a488c2e38a062199ff, type: 3}
       propertyPath: m_Name

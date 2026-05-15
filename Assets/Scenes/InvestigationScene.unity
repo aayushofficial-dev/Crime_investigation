@@ -777,6 +777,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: male02
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ee16c8bd9ffdf4704b1800e51c64fe3d, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 2342956203822869081, guid: ee16c8bd9ffdf4704b1800e51c64fe3d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -792,7 +796,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee16c8bd9ffdf4704b1800e51c64fe3d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1662654446}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee16c8bd9ffdf4704b1800e51c64fe3d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1662654447}
   m_SourcePrefab: {fileID: 100100000, guid: ee16c8bd9ffdf4704b1800e51c64fe3d, type: 3}
 --- !u!1 &353857124
 GameObject:
@@ -949,7 +959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5084159
+      value: 2.538664
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.x
@@ -957,7 +967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.84
+      value: 0.56
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1431,7 +1441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9140718
+      value: 4.050663
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1490,6 +1500,95 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
+--- !u!1 &979230531 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b747e81a7b5444aa186531d18e0f3917, type: 3}
+  m_PrefabInstance: {fileID: 1388938070}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &979230533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979230531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49a52b5f5aeb0f45bffc86cf6420f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: "Tobi: Hello, I\u2019m Tobi, and I\u2019ve been his flatmate for
+    a very long time. I\u2019ll admit that I did hold some grudges against his girlfriend
+    because I personally didn\u2019t really like her, but that alone would never
+    make me do something like that. Besides, I was literally at my office for the
+    past couple of days working full shifts.\r\n"
+--- !u!136 &979230534
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979230531}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!1 &1110447188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ebcb8142627404ed0b510ecc0520efde, type: 3}
+  m_PrefabInstance: {fileID: 1725493242}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1110447190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110447188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49a52b5f5aeb0f45bffc86cf6420f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: 'Amanda: We had a fight yesterday only so, i was planning on leaving
+    this city for a while i had a flight to catch this evening.However i think tobi
+    really gave me negative energy as he didnt like me being in their apartment may
+    be he killed him..'
+--- !u!136 &1110447191
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110447188}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1141112713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1838,6 +1937,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: male01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b747e81a7b5444aa186531d18e0f3917, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 2349082544841146359, guid: b747e81a7b5444aa186531d18e0f3917, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1925,7 +2028,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b747e81a7b5444aa186531d18e0f3917, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 979230533}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b747e81a7b5444aa186531d18e0f3917, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 979230534}
   m_SourcePrefab: {fileID: 100100000, guid: b747e81a7b5444aa186531d18e0f3917, type: 3}
 --- !u!1001 &1476642056
 PrefabInstance:
@@ -2071,6 +2180,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: female01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ea3fa2c10ccab47299686db059921615, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 1581014216829998132, guid: ea3fa2c10ccab47299686db059921615, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2210,7 +2323,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ea3fa2c10ccab47299686db059921615, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1998056946}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ea3fa2c10ccab47299686db059921615, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1998056947}
   m_SourcePrefab: {fileID: 100100000, guid: ea3fa2c10ccab47299686db059921615, type: 3}
 --- !u!1 &1494052466
 GameObject:
@@ -2649,6 +2768,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 990, z: 0}
+--- !u!1 &1662654444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ee16c8bd9ffdf4704b1800e51c64fe3d, type: 3}
+  m_PrefabInstance: {fileID: 218030210}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1662654446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662654444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49a52b5f5aeb0f45bffc86cf6420f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: 'Alext: I cared deeply about him, and I would never harm him. Also
+    we had a gathering at our other friend cozmo but unfortunately he was killed
+    at the way out i would never able to forgive myself. PLease serve us justice.'
+--- !u!136 &1662654447
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662654444}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &1682393776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3129,6 +3291,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: female02
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ebcb8142627404ed0b510ecc0520efde, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 2047839226655181763, guid: ebcb8142627404ed0b510ecc0520efde, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -3152,7 +3318,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ebcb8142627404ed0b510ecc0520efde, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1110447190}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ebcb8142627404ed0b510ecc0520efde, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1110447191}
   m_SourcePrefab: {fileID: 100100000, guid: ebcb8142627404ed0b510ecc0520efde, type: 3}
 --- !u!1 &1726180171 stripped
 GameObject:
@@ -3194,7 +3366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9140718
+      value: 4.050663
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3569,6 +3741,48 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1998056944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ea3fa2c10ccab47299686db059921615, type: 3}
+  m_PrefabInstance: {fileID: 1476642056}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1998056946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998056944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49a52b5f5aeb0f45bffc86cf6420f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: 'Georgia: I am his mother, and I would never harm my only child who
+    has cared for and supported me for years. I only want the truth to come out.'
+--- !u!136 &1998056947
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998056944}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
