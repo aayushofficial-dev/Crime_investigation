@@ -1,43 +1,76 @@
+using System.Collections;
 using UnityEngine;
 
 public class CharacterHit : MonoBehaviour
 {
-    private Animator animator;
-    private Rigidbody rb;
+    public Transform car;
 
-    public bool isHit = false;
+    private bool hit = false;
+
+    private Animator animator;
 
     void Start()
     {
         animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody>();
-
-        rb.isKinematic = true;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Car") && !isHit)
+        if (other.CompareTag("Car") && !hit)
         {
-            isHit = true;
+            hit = true;
 
-            animator.enabled = false;
+            // Disable Character Controller
+            CharacterController cc =
+                GetComponent<CharacterController>();
 
-            rb.isKinematic = false;
+            if (cc != null)
+            {
+                cc.enabled = false;
+            }
 
-            Vector3 hitDirection = (transform.position - collision.transform.position).normalized;
+            // Disable Animator
+            if (animator != null)
+            {
+                animator.enabled = false;
+            }
 
-            rb.AddForce((hitDirection + Vector3.up) * 8f, ForceMode.Impulse);
+            StartCoroutine(HitReaction());
 
-            StartCoroutine(SlowMotionEffect());
+            StartCoroutine(SlowMotion());
         }
     }
 
-    System.Collections.IEnumerator SlowMotionEffect()
+    IEnumerator HitReaction()
+    {
+        Vector3 startPos = transform.position;
+
+        Vector3 hitDirection =
+            (transform.position - car.position).normalized;
+
+        Vector3 targetPos =
+            startPos + hitDirection * 2f;
+
+        targetPos.y = startPos.y;
+
+        float time = 0;
+
+        while (time < 0.4f)
+        {
+            transform.position =
+                Vector3.Lerp(startPos, targetPos, time / 0.4f);
+
+            time += Time.deltaTime;
+
+            yield return null;
+        }
+    }
+
+    IEnumerator SlowMotion()
     {
         Time.timeScale = 0.4f;
 
-        yield return new WaitForSecondsRealtime(1.5f);
+        yield return new WaitForSecondsRealtime(1.2f);
 
         Time.timeScale = 1f;
     }
