@@ -4,7 +4,7 @@ using UnityEngine;
 public class CharacterHit : MonoBehaviour
 {
     public Transform car;
-
+    public  float fallForce = 400f;
     private bool hit = false;
 
     private Animator animator;
@@ -34,7 +34,12 @@ public class CharacterHit : MonoBehaviour
             {
                 animator.enabled = false;
             }
-
+            GetComponent<Rigidbody>().isKinematic = false;
+            Vector3 hitDirection =
+                (transform.position - car.position).normalized;
+            hitDirection.y = 0f;
+            GetComponent<Rigidbody>().AddForce(
+                hitDirection * fallForce, ForceMode.Impulse);
             StartCoroutine(HitReaction());
 
             StartCoroutine(SlowMotion());
