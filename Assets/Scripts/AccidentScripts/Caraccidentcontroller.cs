@@ -1,11 +1,6 @@
 using System.Collections;
 using UnityEngine;
 
-/// <summary>
-/// Attach to your Car GameObject.
-/// Car drives forward automatically, hits the character, stops.
-/// No Animator or Rigidbody needed on car — uses Transform movement.
-/// </summary>
 public class CarAccidentController : MonoBehaviour
 {
     [Header("─── Target ───")]
@@ -28,8 +23,6 @@ public class CarAccidentController : MonoBehaviour
 
     [Header("─── VFX ───")]
     public ParticleSystem dustVFX;
-    public TrailRenderer skidLeft;
-    public TrailRenderer skidRight;
 
     [Header("─── Events ───")]
     public AccidentSceneDirector director;    // drag AccidentSceneDirector GO here
@@ -43,8 +36,6 @@ public class CarAccidentController : MonoBehaviour
     void Start()
     {
         _speed = 0f;
-        if (skidLeft)  skidLeft.emitting  = false;
-        if (skidRight) skidRight.emitting = false;
 
         // Start engine sound
         if (engineAudio && engineClip)
@@ -106,17 +97,11 @@ public class CarAccidentController : MonoBehaviour
     {
         if (_skidPlayed) return;
         _skidPlayed = true;
-        if (skidLeft)  skidLeft.emitting  = true;
-        if (skidRight) skidRight.emitting = true;
         if (skidClip)  AudioSource.PlayClipAtPoint(skidClip, transform.position, 0.9f);
     }
 
     void OnHitCharacter()
     {
-        // stop skids
-        if (skidLeft)  skidLeft.emitting  = false;
-        if (skidRight) skidRight.emitting = false;
-
         // stop engine, play crash
         if (engineAudio) engineAudio.Stop();
         if (impactClip)  AudioSource.PlayClipAtPoint(impactClip, transform.position, 1f);
@@ -134,8 +119,6 @@ public class CarAccidentController : MonoBehaviour
 
     void StopAllVFX()
     {
-        if (skidLeft)  skidLeft.emitting = false;
-        if (skidRight) skidRight.emitting = false;
         if (dustVFX && dustVFX.isPlaying) dustVFX.Stop();
     }
 }
