@@ -8,12 +8,10 @@ public class CharacterHit : MonoBehaviour
     private bool hit = false;
 
     private Animator animator;
-
     void Start()
     {
         animator = GetComponent<Animator>();
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Car") && !hit)
